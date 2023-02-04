@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jIt-RL-KkV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -11,39 +11,54 @@
         <!--Item 2-->
         <scene sceneID="xsd-tf-LdG">
             <objects>
-                <viewController id="LAt-1o-MGu" sceneMemberID="viewController">
+                <viewController id="LAt-1o-MGu" customClass="GraphViewController" customModule="MyDietDiaryApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="miW-hb-26C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="2rc-jr-I4H"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="sV4-Ct-7l3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TC-pU-lZA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="278"/>
+            <point key="canvasLocation" x="661" y="369"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Ht6-u4-Rbd">
             <objects>
-                <viewController id="Fvq-kK-hU1" sceneMemberID="viewController">
+                <viewController id="Fvq-kK-hU1" customClass="CalendarViewController" customModule="MyDietDiaryApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Elz-Tc-cOd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fet-Je-FYH" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="194" width="374" height="519"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KaD-lQ-or7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="KaD-lQ-or7" firstAttribute="bottom" secondItem="fet-Je-FYH" secondAttribute="bottom" constant="100" id="5UD-ty-dvd"/>
+                            <constraint firstItem="KaD-lQ-or7" firstAttribute="trailing" secondItem="fet-Je-FYH" secondAttribute="trailing" constant="20" id="RiJ-EM-dIQ"/>
+                            <constraint firstItem="fet-Je-FYH" firstAttribute="top" secondItem="KaD-lQ-or7" secondAttribute="top" constant="150" id="eNK-dd-YJp"/>
+                            <constraint firstItem="fet-Je-FYH" firstAttribute="leading" secondItem="KaD-lQ-or7" secondAttribute="leading" constant="20" id="wQx-vL-5ga"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Mkt-in-cOp"/>
+                    <connections>
+                        <outlet property="calendarView" destination="fet-Je-FYH" id="iy6-gu-JQw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3g-e5-70w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="661" y="-328"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="70f-qr-ydd">
             <objects>
-                <tabBarController id="jIt-RL-KkV" sceneMemberID="viewController">
+                <tabBarController id="jIt-RL-KkV" customClass="MainTabBarController" customModule="MyDietDiaryApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0OT-0I-Phm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -62,6 +77,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
