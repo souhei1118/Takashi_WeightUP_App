@@ -1,0 +1,6 @@
+framework module Pods_MyDietDiaryApp2 {
+  umbrella header "Pods-MyDietDiaryApp2-umbrella.h"
+
+  export *
+  module * { export * }
+}
