@@ -48,6 +48,9 @@
                                 <state key="normal" title="＋">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="EdiorButtonDidTap:" destination="Fvq-kK-hU1" eventType="touchUpInside" id="GZM-4b-Ed9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KaD-lQ-or7"/>
