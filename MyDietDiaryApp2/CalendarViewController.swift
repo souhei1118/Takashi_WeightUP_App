@@ -10,10 +10,12 @@ import FSCalendar
 
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: FSCalendar!
+    @IBOutlet weak var addWeightButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCalendar()
+        configureButton()
     }
     
     func configureCalendar() {
@@ -34,5 +36,9 @@ class CalendarViewController: UIViewController {
         
         calendarView.calendarWeekdayView.weekdayLabels[0].textColor = .red
         calendarView.calendarWeekdayView.weekdayLabels[6].textColor = .blue
+    }
+    
+    func configureButton() {
+        addWeightButton.layer.cornerRadius = addWeightButton.bounds.width / 2
     }
 }
