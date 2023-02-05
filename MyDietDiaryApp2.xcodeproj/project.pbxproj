@@ -19,6 +19,8 @@
 		94311A23298E16F200B41505 /* MyDietDiaryApp2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94311A22298E16F200B41505 /* MyDietDiaryApp2UITests.swift */; };
 		94311A25298E16F200B41505 /* MyDietDiaryApp2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94311A24298E16F200B41505 /* MyDietDiaryApp2UITestsLaunchTests.swift */; };
 		94311A32298E185500B41505 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94311A31298E185500B41505 /* MainTabBarController.swift */; };
+		946DD285298E4BD9001F82AD /* EditorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946DD284298E4BD9001F82AD /* EditorViewController.storyboard */; };
+		946DD287298E4C0A001F82AD /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DD286298E4C0A001F82AD /* EditorViewController.swift */; };
 		9494AF02298E2E1E0038395A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9494AF01298E2E1E0038395A /* CalendarViewController.swift */; };
 		9494AF04298E2E440038395A /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9494AF03298E2E440038395A /* GraphViewController.swift */; };
 		D4C258F4E7B0C61ED401C8F2 /* Pods_MyDietDiaryApp2_MyDietDiaryApp2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E02447D91E109F1437EE7D6 /* Pods_MyDietDiaryApp2_MyDietDiaryApp2UITests.framework */; };
@@ -63,6 +65,8 @@
 		94311A22298E16F200B41505 /* MyDietDiaryApp2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDietDiaryApp2UITests.swift; sourceTree = "<group>"; };
 		94311A24298E16F200B41505 /* MyDietDiaryApp2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDietDiaryApp2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94311A31298E185500B41505 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		946DD284298E4BD9001F82AD /* EditorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditorViewController.storyboard; sourceTree = "<group>"; };
+		946DD286298E4C0A001F82AD /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		9494AF01298E2E1E0038395A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9494AF03298E2E440038395A /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		D274528A512E93E40DAE27FE /* Pods-MyDietDiaryApp2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDietDiaryApp2Tests.release.xcconfig"; path = "Target Support Files/Pods-MyDietDiaryApp2Tests/Pods-MyDietDiaryApp2Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,12 +136,14 @@
 		94311A00298E16EF00B41505 /* MyDietDiaryApp2 */ = {
 			isa = PBXGroup;
 			children = (
-				94311A31298E185500B41505 /* MainTabBarController.swift */,
 				94311A01298E16EF00B41505 /* AppDelegate.swift */,
 				94311A03298E16EF00B41505 /* SceneDelegate.swift */,
 				94311A05298E16EF00B41505 /* ViewController.swift */,
+				94311A31298E185500B41505 /* MainTabBarController.swift */,
 				94311A07298E16EF00B41505 /* Main.storyboard */,
 				9494AF01298E2E1E0038395A /* CalendarViewController.swift */,
+				946DD284298E4BD9001F82AD /* EditorViewController.storyboard */,
+				946DD286298E4C0A001F82AD /* EditorViewController.swift */,
 				9494AF03298E2E440038395A /* GraphViewController.swift */,
 				94311A0A298E16F200B41505 /* Assets.xcassets */,
 				94311A0C298E16F200B41505 /* LaunchScreen.storyboard */,
@@ -173,7 +179,6 @@
 				37D1CB0048D90D38B2D870FA /* Pods-MyDietDiaryApp2Tests.debug.xcconfig */,
 				D274528A512E93E40DAE27FE /* Pods-MyDietDiaryApp2Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -286,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946DD285298E4BD9001F82AD /* EditorViewController.storyboard in Resources */,
 				94311A0E298E16F200B41505 /* LaunchScreen.storyboard in Resources */,
 				94311A0B298E16F200B41505 /* Assets.xcassets in Resources */,
 				94311A09298E16EF00B41505 /* Main.storyboard in Resources */,
@@ -422,6 +428,7 @@
 				9494AF04298E2E440038395A /* GraphViewController.swift in Sources */,
 				94311A32298E185500B41505 /* MainTabBarController.swift in Sources */,
 				94311A04298E16EF00B41505 /* SceneDelegate.swift in Sources */,
+				946DD287298E4C0A001F82AD /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

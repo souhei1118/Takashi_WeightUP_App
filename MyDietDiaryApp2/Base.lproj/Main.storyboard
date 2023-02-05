@@ -36,18 +36,37 @@
                                 <rect key="frame" x="20" y="194" width="374" height="519"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9Y-eE-uao">
+                                <rect key="frame" x="344" y="739" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ALX-DE-oKc"/>
+                                    <constraint firstAttribute="height" constant="50" id="bfy-kF-1zh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="＋">
+                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNutton:" destination="Fvq-kK-hU1" eventType="touchUpInside" id="gKh-m3-e5C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KaD-lQ-or7"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="KaD-lQ-or7" firstAttribute="trailing" secondItem="k9Y-eE-uao" secondAttribute="trailing" constant="20" id="3U7-6P-GOM"/>
                             <constraint firstItem="KaD-lQ-or7" firstAttribute="bottom" secondItem="fet-Je-FYH" secondAttribute="bottom" constant="100" id="5UD-ty-dvd"/>
                             <constraint firstItem="KaD-lQ-or7" firstAttribute="trailing" secondItem="fet-Je-FYH" secondAttribute="trailing" constant="20" id="RiJ-EM-dIQ"/>
                             <constraint firstItem="fet-Je-FYH" firstAttribute="top" secondItem="KaD-lQ-or7" secondAttribute="top" constant="150" id="eNK-dd-YJp"/>
+                            <constraint firstItem="k9Y-eE-uao" firstAttribute="bottom" secondItem="KaD-lQ-or7" secondAttribute="bottom" constant="-24" id="gaF-7P-pvS"/>
                             <constraint firstItem="fet-Je-FYH" firstAttribute="leading" secondItem="KaD-lQ-or7" secondAttribute="leading" constant="20" id="wQx-vL-5ga"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Mkt-in-cOp"/>
                     <connections>
+                        <outlet property="addWeightButton" destination="k9Y-eE-uao" id="s3K-4S-ZM5"/>
                         <outlet property="calendarView" destination="fet-Je-FYH" id="iy6-gu-JQw"/>
                     </connections>
                 </viewController>
@@ -75,8 +94,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -10,10 +10,17 @@ import FSCalendar
 
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: FSCalendar!
+    @IBOutlet weak var addWeightButton: UIButton!
+    @IBAction func addNutton(_ sender: UIButton) {
+        transitionToEditorView()
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCalendar()
+        configureButton()
     }
     
     func configureCalendar() {
@@ -34,5 +41,15 @@ class CalendarViewController: UIViewController {
         
         calendarView.calendarWeekdayView.weekdayLabels[0].textColor = .red
         calendarView.calendarWeekdayView.weekdayLabels[6].textColor = .blue
+    }
+    
+    func configureButton() {
+        addWeightButton.layer.cornerRadius = addWeightButton.bounds.width / 2
+    }
+    
+    func transitionToEditorView() {
+        let storybord = UIStoryboard(name: "EditorViewController", bundle: nil)
+        guard let editorViewController = storybord.instantiateInitialViewController() as? EditorViewController else { return }
+        present(editorViewController, animated: true)
     }
 }
