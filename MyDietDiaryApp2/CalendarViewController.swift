@@ -11,9 +11,10 @@ import FSCalendar
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var addWeightButton: UIButton!
-    @IBAction func EdiorButtonDidTap(_ sender: UIButton) {
+    @IBAction func addNutton(_ sender: UIButton) {
         transitionToEditorView()
     }
+    
     
     
     override func viewDidLoad() {
@@ -47,10 +48,8 @@ class CalendarViewController: UIViewController {
     }
     
     func transitionToEditorView() {
-        let storybord = UIStoryboard(name: "EditorViewController",bundle: nil )
-        guard let editorViewController =
-                storybord.instantiateInitialViewController() as?
-                EditorVIewController else { return }
+        let storybord = UIStoryboard(name: "EditorViewController", bundle: nil)
+        guard let editorViewController = storybord.instantiateInitialViewController() as? EditorViewController else { return }
         present(editorViewController, animated: true)
     }
 }

@@ -7,6 +7,6 @@
 
 import UIKit
 
-class EditorVIewController: UIViewController {
+class EditorViewController: UIViewController {
     
 }

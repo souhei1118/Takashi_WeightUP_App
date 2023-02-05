@@ -49,7 +49,7 @@
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="EdiorButtonDidTap:" destination="Fvq-kK-hU1" eventType="touchUpInside" id="GZM-4b-Ed9"/>
+                                    <action selector="addNutton:" destination="Fvq-kK-hU1" eventType="touchUpInside" id="gKh-m3-e5C"/>
                                 </connections>
                             </button>
                         </subviews>
