@@ -19,6 +19,7 @@ class EditorViewController: UIViewController {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = Locale(identifier: "ja-JP")
         datePicker.date = Date()
+        datePicker.addTarget(self, action: #selector(didChangeDate(picker:)), for: .valueChanged)
         return datePicker
     }
     
@@ -28,6 +29,14 @@ class EditorViewController: UIViewController {
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapDone))
         toolBar.setItems([doneItem], animated: true)
         return toolBar
+    }
+    
+    var dateFormatter: DateFormatter {
+        let dateFormatt = DateFormatter()
+        dateFormatt.dateStyle = .long
+        dateFormatt.timeZone = .current
+        dateFormatt.locale = Locale(identifier: "ja-JP")
+        return dateFormatt
     }
     
     override func viewDidLoad() {
@@ -51,5 +60,10 @@ class EditorViewController: UIViewController {
     func configureDateTextField() {
         inputDateTextField.inputView = datePicker
         inputDateTextField.inputAccessoryView = toolbar
+        inputDateTextField.text = dateFormatter.string(from: Date())
+    }
+    
+    @objc func didChangeDate(picker: UIDatePicker) {
+        inputDateTextField.text = dateFormatter.string(from: picker.date)
     }
 }
