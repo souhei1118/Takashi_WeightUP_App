@@ -15,13 +15,53 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uV-ze-IuA">
+                                <rect key="frame" x="40" y="84" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="体重" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIN-MR-LgZ">
+                                <rect key="frame" x="40" y="179" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fHX-FN-nK5">
+                                <rect key="frame" x="40" y="125" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cm-yw-bqi">
+                                <rect key="frame" x="40" y="220" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fHX-FN-nK5" secondAttribute="trailing" constant="40" id="3rK-VI-L4t"/>
+                            <constraint firstItem="5uV-ze-IuA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="9Ar-BO-gSk"/>
+                            <constraint firstItem="fHX-FN-nK5" firstAttribute="leading" secondItem="5uV-ze-IuA" secondAttribute="leading" id="Du4-Bf-eJg"/>
+                            <constraint firstItem="PIN-MR-LgZ" firstAttribute="leading" secondItem="5uV-ze-IuA" secondAttribute="leading" id="Icn-nD-boW"/>
+                            <constraint firstItem="PIN-MR-LgZ" firstAttribute="top" secondItem="fHX-FN-nK5" secondAttribute="bottom" constant="20" id="QHC-YM-xiD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9cm-yw-bqi" secondAttribute="trailing" constant="40" id="Zk1-ZS-e2J"/>
+                            <constraint firstItem="9cm-yw-bqi" firstAttribute="leading" secondItem="5uV-ze-IuA" secondAttribute="leading" id="crW-1L-S6A"/>
+                            <constraint firstItem="fHX-FN-nK5" firstAttribute="top" secondItem="5uV-ze-IuA" secondAttribute="bottom" constant="20" id="dxQ-59-DSp"/>
+                            <constraint firstItem="9cm-yw-bqi" firstAttribute="top" secondItem="PIN-MR-LgZ" secondAttribute="bottom" constant="20" id="ig5-ny-fAJ"/>
+                            <constraint firstItem="5uV-ze-IuA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="ydF-cc-WMs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputDateTextField" destination="fHX-FN-nK5" id="1hF-dE-bM5"/>
+                        <outlet property="inputWeightTextField" destination="9cm-yw-bqi" id="OQa-cp-dIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="135"/>
+            <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
         </scene>
     </scenes>
     <resources>
