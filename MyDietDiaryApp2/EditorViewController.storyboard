@@ -38,25 +38,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2v-bG-8XC">
+                                <rect key="frame" x="40" y="722" width="334" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1F5-jA-ydq"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E2v-bG-8XC" secondAttribute="trailing" constant="40" id="1nf-C9-M8U"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fHX-FN-nK5" secondAttribute="trailing" constant="40" id="3rK-VI-L4t"/>
                             <constraint firstItem="5uV-ze-IuA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="9Ar-BO-gSk"/>
                             <constraint firstItem="fHX-FN-nK5" firstAttribute="leading" secondItem="5uV-ze-IuA" secondAttribute="leading" id="Du4-Bf-eJg"/>
                             <constraint firstItem="PIN-MR-LgZ" firstAttribute="leading" secondItem="5uV-ze-IuA" secondAttribute="leading" id="Icn-nD-boW"/>
+                            <constraint firstItem="E2v-bG-8XC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="LtE-Fc-Tka"/>
                             <constraint firstItem="PIN-MR-LgZ" firstAttribute="top" secondItem="fHX-FN-nK5" secondAttribute="bottom" constant="20" id="QHC-YM-xiD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9cm-yw-bqi" secondAttribute="trailing" constant="40" id="Zk1-ZS-e2J"/>
                             <constraint firstItem="9cm-yw-bqi" firstAttribute="leading" secondItem="5uV-ze-IuA" secondAttribute="leading" id="crW-1L-S6A"/>
                             <constraint firstItem="fHX-FN-nK5" firstAttribute="top" secondItem="5uV-ze-IuA" secondAttribute="bottom" constant="20" id="dxQ-59-DSp"/>
                             <constraint firstItem="9cm-yw-bqi" firstAttribute="top" secondItem="PIN-MR-LgZ" secondAttribute="bottom" constant="20" id="ig5-ny-fAJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="E2v-bG-8XC" secondAttribute="bottom" constant="100" id="jyw-94-vxU"/>
                             <constraint firstItem="5uV-ze-IuA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="ydF-cc-WMs"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="inputDateTextField" destination="fHX-FN-nK5" id="1hF-dE-bM5"/>
                         <outlet property="inputWeightTextField" destination="9cm-yw-bqi" id="OQa-cp-dIg"/>
+                        <outlet property="saveButton" destination="E2v-bG-8XC" id="Vxh-Yk-p34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -67,6 +83,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
