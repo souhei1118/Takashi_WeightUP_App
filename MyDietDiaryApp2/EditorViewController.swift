@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EditorViewController: UIViewController {
     @IBOutlet weak var inputWeightTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var inputDateTextField: UITextField!
+    @IBAction func saveButton(_ sender: UIButton) {
+        saveRecord()
+    }
+    
+    var record = WeightRecord()
     
     
     var datePicker: UIDatePicker {
@@ -45,6 +51,9 @@ class EditorViewController: UIViewController {
         configureWeightTextField()
         configureDateTextField()
         configureSaveButton()
+        let realm = try! Realm()
+        let firstRecord = realm.objects(WeightRecord.self).first
+        print("👀firstRecord: \(String(describing: firstRecord))")
     }
     
     @objc func didTapDone() {
@@ -71,5 +80,21 @@ class EditorViewController: UIViewController {
     
     func configureSaveButton() {
         saveButton.layer.cornerRadius = 5
+    }
+    
+    func saveRecord() {
+        let realm = try! Realm()
+        try! realm.write {
+            if let dateText = inputDateTextField.text,
+               let date = dateFormatter.date(from: dateText) {
+                record.date = date
+            }
+            if let weightText = inputWeightTextField.text,
+               let weight = Double(weightText) {
+                record.weight = weight
+            }
+            realm.add(record)
+        }
+        dismiss(animated: true)
     }
 }
