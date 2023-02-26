@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: FSCalendar!
@@ -15,12 +16,22 @@ class CalendarViewController: UIViewController {
         transitionToEditorView()
     }
     
-    
+    var recordList: [WeightRecord] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCalendar()
         configureButton()
+        // FSCalenderDateSourceを有効化
+        calendarView.dataSource = self
+        // FSCalendarDelegateを有効化
+        calendarView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getRecord()
+        calendarView.reloadData()
     }
     
     func configureCalendar() {
@@ -47,9 +58,32 @@ class CalendarViewController: UIViewController {
         addWeightButton.layer.cornerRadius = addWeightButton.bounds.width / 2
     }
     
-    func transitionToEditorView() {
+    func transitionToEditorView(with record: WeightRecord? = nil) {
         let storybord = UIStoryboard(name: "EditorViewController", bundle: nil)
         guard let editorViewController = storybord.instantiateInitialViewController() as? EditorViewController else { return }
+        if let record = record {
+            editorViewController.record = record        }
         present(editorViewController, animated: true)
+    }
+    
+    func getRecord() {
+        let realm = try! Realm()
+        recordList = Array(realm.objects(WeightRecord.self))
+    }
+}
+extension CalendarViewController: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let dateList = recordList.map({ $0.date.zerolock })
+        // 比較対象のDate型の年月日が一致していた場合にtrueとなる
+        let isEqualDate = dateList.contains(date.zerolock)
+        return isEqualDate ? 1 : 0
+    }
+}
+
+extension CalendarViewController :FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        calendar.deselect(date)
+        guard let record = recordList.first(where: {$0.date.zerolock == date.zerolock }) else { return }
+        transitionToEditorView(with: record)
     }
 }
