@@ -62,7 +62,9 @@ class CalendarViewController: UIViewController {
         let storybord = UIStoryboard(name: "EditorViewController", bundle: nil)
         guard let editorViewController = storybord.instantiateInitialViewController() as? EditorViewController else { return }
         if let record = record {
-            editorViewController.record = record        }
+            editorViewController.record = record
+        }
+        editorViewController.delegate = self
         present(editorViewController, animated: true)
     }
     
@@ -85,5 +87,12 @@ extension CalendarViewController :FSCalendarDelegate {
         calendar.deselect(date)
         guard let record = recordList.first(where: {$0.date.zerolock == date.zerolock }) else { return }
         transitionToEditorView(with: record)
+    }
+}
+
+extension CalendarViewController: EditorViewControllerDelegate {
+    func recordUpdate() {
+        getRecord()
+        calendarView.reloadData()
     }
 }
